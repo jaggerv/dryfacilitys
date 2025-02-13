@@ -10,7 +10,7 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/proyectos?populate=*&sort=id:asc"
+          "https://df-strapi-production.up.railway.app/api/proyectos?populate=*&sort=id:asc"
         );
         setProjects(response.data.data);
       } catch (error) {

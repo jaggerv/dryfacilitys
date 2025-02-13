@@ -10,7 +10,7 @@ const Testimonials = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/testimonios?populate=*&sort=id:asc"
+          "https://df-strapi-production.up.railway.app/api/testimonios?populate=*&sort=id:asc"
         );
         setTestimonials(response.data.data);
       } catch (error) {

@@ -10,7 +10,7 @@ const Services = () => {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/servicios?populate=imagen&sort=id:asc"
+          "https://df-strapi-production.up.railway.app/api/servicios?populate=imagen&sort=id:asc"
         );
         setServices(response.data.data);
       } catch (error) {

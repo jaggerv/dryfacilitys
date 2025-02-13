@@ -15,7 +15,7 @@ export default function AboutUs() {
   useEffect(() => {
     const fetchAboutUs = async () => {
       try {
-        const response = await axios.get("http://localhost:1337/api/sobre-nosotross");
+        const response = await axios.get("https://df-strapi-production.up.railway.app/api/sobre-nosotross");
         setAboutData(response.data.data[0]); // Accedemos al primer objeto del arreglo 'data'
       } catch (error) {
         console.error("Error fetching about us data:", error);

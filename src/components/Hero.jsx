@@ -10,7 +10,7 @@ export default function Hero() {
     const fetchHeroImage = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:1337/api/imagen-principals?populate=imagen&sort=id:asc"
+          "https://df-strapi-production.up.railway.app/api/imagen-principals?populate=imagen&sort=id:asc"
         );
         
         if (response.data.data.length > 0 && response.data.data[0]?.imagen) {
