@@ -10,6 +10,7 @@ import Projects from '../components/OurProjects';
 import Testimonials from '../components/Testimonials';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import Faq from '../components/Faq';
 
 
 export default function Home() {
@@ -39,6 +40,9 @@ export default function Home() {
       </section>
       <section data-aos="fade-up" id="testimonios">
         <Testimonials />
+      </section>
+      <section datas-aos="fade-up" id="faq">
+        <Faq />
       </section>
       <section data-aos="fade-up" id="contacto">
         <ContactForm />
