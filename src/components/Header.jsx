@@ -92,6 +92,16 @@ export default function Header() {
                     TESTIMONIOS
                   </Link>
                 </NavDropdown.Item>
+                <NavDropdown.Item as="div">
+                  <Link
+                    to="faqs"
+                    smooth={true}
+                    duration={500}
+                    className="dropdown-Navbr"
+                  >
+                    FAQS
+                  </Link>
+                </NavDropdown.Item>
               </NavDropdown>
             )}
 

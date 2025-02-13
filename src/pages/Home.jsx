@@ -41,7 +41,7 @@ export default function Home() {
       <section data-aos="fade-up" id="testimonios">
         <Testimonials />
       </section>
-      <section datas-aos="fade-up" id="faq">
+      <section data-aos="fade-up" id="faqs">
         <Faq />
       </section>
       <section data-aos="fade-up" id="contacto">

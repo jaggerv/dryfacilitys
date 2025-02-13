@@ -45,7 +45,9 @@ export default function Footer() {
                 <li><a className="footerLinks" href="#cobertura">Cobertura</a></li>
                 <li><a className="footerLinks" href="#proyectos-destacados">Proyectos destacados</a></li>
                 <li><a className="footerLinks" href="#testimonios">Testimonios</a></li>
+                <li><a className="footerLinks" href="#faqs">FAQs</a></li>
                 <li><a className="footerLinks" href="#contacto">Contacto</a></li>
+
               </ul>
             </Container>
           </Col>
