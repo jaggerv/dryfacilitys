@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1920 1080">
+  <!-- Generator: Adobe Illustrator 29.2.1, SVG Export Plug-In . SVG Version: 2.1.0 Build 116)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2 {
+        fill: #1d1d1b;
+      }
+
+      .st1 {
+        font-family: BrotherXL-Thin, 'Brother XL';
+        font-size: 230.31px;
+        font-weight: 200;
+      }
+
+      .st2 {
+        font-family: ArialMT, Arial;
+        font-size: 101.04px;
+        letter-spacing: .24em;
+      }
+
+      .st3 {
+        fill: none;
+        stroke: #1a1a1a;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+    </style>
+  </defs>
+  <polygon points="136.55 606.47 570.5 39 1372.92 39 1547.53 268.81 1547.53 200.04 1539.83 200.04 1539.83 173.81 1634.83 173.81 1634.83 198.33 1627.13 198.33 1627.13 374.09 1805.2 606.47 1629.86 606.47 1283.05 153.27 936.4 607.76 136.55 606.47"/>
+  <rect x="1213.72" y="376.66" width="64.19" height="64.19"/>
+  <rect x="1295.89" y="376.66" width="64.19" height="64.19"/>
+  <rect x="1213.72" y="458.83" width="64.19" height="64.19"/>
+  <rect x="1295.89" y="458.83" width="64.19" height="64.19"/>
+  <line class="st3" x1="494.75" y1="155.83" x2="879.91" y2="546.13"/>
+  <line class="st3" x1="1461.51" y1="154.55" x2="1363.93" y2="254.69"/>
+  <line class="st3" x1="1559.08" y1="175.09" x2="1623.28" y2="241.85"/>
+  <rect class="st0" x="136.55" y="881.22" width="1674.18" height="23.11" rx="3.5" ry="3.5"/>
+  <text class="st1" transform="translate(109.95 823.26) scale(.88 1)"><tspan x="0" y="0">DRY FACILITYS</tspan></text>
+  <text class="st2" transform="translate(128.84 1011.11)"><tspan x="0" y="0">IMPERMEABILIZACIONES</tspan></text>
+</svg>
