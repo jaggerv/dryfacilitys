@@ -5,27 +5,41 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "../app.css"; // Asegúrate de importar el archivo CSS
 
 export default function AboutUs() {
-  const [showModal, setShowModal] = useState(false); // Estado para mostrar el Modal
-  const [aboutData, setAboutData] = useState(null); // Estado para los datos del endpoint
+  const [showModal, setShowModal] = useState(false);
+  const [aboutData, setAboutData] = useState(null);
 
-  // Función para manejar el toggle del Modal
   const toggleModal = () => setShowModal(!showModal);
 
-  // Efecto para obtener los datos del endpoint "sobre-nosotros"
   useEffect(() => {
     const fetchAboutUs = async () => {
       try {
-        const response = await axios.get("https://df-strapi-production.up.railway.app/api/sobre-nosotross");
-        setAboutData(response.data.data[0]); // Accedemos al primer objeto del arreglo 'data'
+        const response = await axios.get(
+          "https://panel.dryfacilitys.cl/wp/wp-json/wp/v2/sobre_nosotros"
+        );
+
+        // Extraer datos desde ACF
+        if (response.data.length > 0) {
+          const acfData = response.data[0].acf;
+          setAboutData({
+            titulo: acfData?.titulo || "Título no disponible",
+            texto: acfData?.texto || "Descripción no disponible.",
+            punto1: acfData?.punto1 || "Punto 1 no disponible",
+            punto2: acfData?.punto2 || "Punto 2 no disponible",
+            punto3: acfData?.punto3 || "Punto 3 no disponible",
+            imagen: acfData?.imagen?.url || "https://via.placeholder.com/500",
+            video1: acfData?.video1 || "",
+            video2: acfData?.video2 || "",
+            video3: acfData?.video3 || "",
+          });
+        }
       } catch (error) {
         console.error("Error fetching about us data:", error);
       }
     };
 
     fetchAboutUs();
-  }, []); // Solo se ejecuta una vez al cargar el componente
+  }, []);
 
-  // Si los datos aún no están disponibles, muestra un mensaje de carga
   if (!aboutData) {
     return <div>Cargando...</div>;
   }
@@ -37,8 +51,8 @@ export default function AboutUs() {
         <Row>
           <Col xs={12} md={6}>
             <Container>
-              <h3>{aboutData.titulo}</h3> {/* Título desde el endpoint */}
-              <p>{aboutData.texto}</p> {/* Texto desde el endpoint */}
+              <h3>{aboutData.titulo}</h3>
+              <p>{aboutData.texto}</p>
             </Container>
             <Container>
               <ul className="list-unstyled">
@@ -53,66 +67,58 @@ export default function AboutUs() {
                 </li>
               </ul>
             </Container>
-            {/* Botón que abre el Modal */}
             <Button variant="warning" onClick={toggleModal} className="m-3">
               Ver Videos
             </Button>
           </Col>
           <Col xs={12} md={6}>
-            <Image src="../src/assets/placeholder.png" fluid />
+            <Image src={aboutData.imagen} fluid alt="Imagen Sobre Nosotros" className="custom-imagen" />
           </Col>
         </Row>
       </Container>
 
-      {/* Modal con el carrusel de videos embebidos */}
-      <Modal
-        show={showModal}
-        onHide={toggleModal}
-        size="xl"
-        centered
-        aria-labelledby="contained-modal-title-vcenter"
-        className="full-screen-modal"
-      >
+      <Modal show={showModal} onHide={toggleModal} size="xl" centered>
         <Modal.Header closeButton>
           <Modal.Title>Nuestros videos</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Carousel>
-            {/* Video 1 */}
-            <Carousel.Item>
-              <div className="video-container">
-                <iframe
-                  className="embed-responsive-item"
-                  src={aboutData.video1} // Usamos el video1 desde el endpoint
-                  title="Video 1"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </Carousel.Item>
-
-            {/* Video 2 */}
-            <Carousel.Item>
-              <div className="video-container">
-                <iframe
-                  className="embed-responsive-item"
-                  src={aboutData.video2} // Usamos el video2 desde el endpoint
-                  title="Video 2"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </Carousel.Item>
-
-            {/* Video 3 */}
-            <Carousel.Item>
-              <div className="video-container">
-                <iframe
-                  className="embed-responsive-item"
-                  src={aboutData.video3} // Usamos el video3 desde el endpoint
-                  title="Video 3"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </Carousel.Item>
+            {aboutData.video1 && (
+              <Carousel.Item>
+                <div className="video-container">
+                  <iframe
+                    className="embed-responsive-item"
+                    src={aboutData.video1}
+                    title="Video 1"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </Carousel.Item>
+            )}
+            {aboutData.video2 && (
+              <Carousel.Item>
+                <div className="video-container">
+                  <iframe
+                    className="embed-responsive-item"
+                    src={aboutData.video2}
+                    title="Video 2"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </Carousel.Item>
+            )}
+            {aboutData.video3 && (
+              <Carousel.Item>
+                <div className="video-container">
+                  <iframe
+                    className="embed-responsive-item"
+                    src={aboutData.video3}
+                    title="Video 3"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </Carousel.Item>
+            )}
           </Carousel>
         </Modal.Body>
       </Modal>

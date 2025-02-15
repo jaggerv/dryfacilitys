@@ -10,9 +10,9 @@ const Services = () => {
     const fetchServices = async () => {
       try {
         const response = await axios.get(
-          "https://df-strapi-production.up.railway.app/api/servicios?populate=imagen&sort=id:asc"
+          "https://panel.dryfacilitys.cl/wp/wp-json/wp/v2/servicios"
         );
-        setServices(response.data.data);
+        setServices(response.data);
       } catch (error) {
         console.error("Error fetching services:", error);
       }
@@ -35,10 +35,10 @@ const Services = () => {
 
         <Row>
           {services.map((service) => {
-            // Construye la URL de la imagen asegurando que tiene la base correcta
-            const imageUrl = service.imagen
-              ? `http://localhost:1337${service.imagen.formats.medium?.url || service.imagen.url}`
-              : null;
+            // Obtén la URL de la imagen desde ACF
+            const imageUrl = service.acf?.imagen?.url || "";
+            const title = service.acf?.titulo || "Servicio sin título";
+            const description = service.acf?.descripcion || "";
 
             return (
               <Col md={6} key={service.id} className="mb-4">
@@ -46,26 +46,24 @@ const Services = () => {
                   {imageUrl && (
                     <img
                       src={imageUrl}
-                      alt={service.imagen.alternativeText || "Servicio"}
+                      alt={title}
                       className="img-fluid serviceImg"
                     />
                   )}
-                  <h3 className="text-xl font-semibold">{service.titulo}</h3>
-                  <p className="text-gray-600 mt-2">
-                    {service.descripcion || "Sin descripción"}
-                  </p>
+                  <h3 className="text-xl font-semibold">{title}</h3>
+                  <p className="text-gray-600 mt-2">{description}</p>
                 </Container>
               </Col>
             );
           })}
         </Row>
-        <h4>¿Necesita asesoría o un presupuesto? </h4> 
+        <h4>¿Necesita asesoría o un presupuesto?</h4>
         <Container className="d-flex justify-content-center align-items-center pt-2 pb-5 content-center">
           <Button
             variant="warning"
             size="lg"
             target="_blank"
-            href="https://wa.me/"
+            href="https://wa.me/56983056957"
           >
             ¡Contáctenos hoy mismo!
           </Button>

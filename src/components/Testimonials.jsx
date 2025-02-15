@@ -10,9 +10,17 @@ const Testimonials = () => {
     const fetchTestimonials = async () => {
       try {
         const response = await axios.get(
-          "https://df-strapi-production.up.railway.app/api/testimonios?populate=*&sort=id:asc"
+          "https://panel.dryfacilitys.cl/wp/wp-json/wp/v2/testimonios"
         );
-        setTestimonials(response.data.data);
+
+        // Extraer los testimonios desde ACF
+        const formattedTestimonials = response.data.map((item) => ({
+          id: item.id,
+          testimonio: item.acf?.testimonio || "Sin testimonio disponible",
+          cliente: item.acf?.cliente || "Cliente anónimo",
+        }));
+
+        setTestimonials(formattedTestimonials);
       } catch (error) {
         console.error("Error fetching testimonials:", error);
       }
@@ -28,7 +36,11 @@ const Testimonials = () => {
         <h3 className="mt-5">
           Lo que nuestros clientes dicen de nosotros
         </h3>
-        <h5>La satisfacción de nuestros clientes es nuestra mayor recompensa. Aquí hay algunas opiniones de quienes han confiado en nuestros servicios.</h5>
+        <h5>
+          La satisfacción de nuestros clientes es nuestra mayor recompensa.
+          Aquí hay algunas opiniones de quienes han confiado en nuestros
+          servicios.
+        </h5>
         <Row className="mt-4">
           {testimonials.map((testimonial) => (
             <Col md={6} lg={4} key={testimonial.id} className="mb-4">

@@ -20,13 +20,7 @@ export default function Footer() {
               <li className="my-3"><i className="bi bi-envelope-at text-warning"></i> contacto@dryfacilitys.cl</li>
             </ul>
             <Container className="d-flex justify-content-start justify-content-center justify-content-md-start">
-              <a href="https://facebook.com" target="_blank" className="text-white">
-                <i className="bi bi-facebook socialIcon m-2"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" className="text-white">
-                <i className="bi bi-twitter-x socialIcon m-2"></i>
-              </a>
-              <a href="https://instagram.com" target="_blank" className="text-white">
+              <a href="https://instagram.com/dryfacilitys" target="_blank" className="text-white">
                 <i className="bi bi-instagram socialIcon m-2"></i>
               </a>
             </Container>

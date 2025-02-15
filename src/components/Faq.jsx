@@ -9,9 +9,16 @@ const Faq = () => {
   useEffect(() => {
     const fetchFAQ = async () => {
       try {
-        const response = await axios.get("https://df-strapi-production.up.railway.app/api/faqs?populate&sort=id:asc");
-        setFaqData(response.data.data);  // Accedemos a 'data' directamente
-        console.log(response.data.data); // Verifica la estructura de los datos
+        // Realizamos la solicitud al nuevo endpoint
+        const response = await axios.get("https://panel.dryfacilitys.cl/wp/wp-json/wp/v2/faqs");
+        
+        // Verifica la estructura de los datos que recibes
+        console.log(response.data);
+
+        // Accedemos a los datos dentro de 'acf' y los asignamos a 'faqData'
+        if (response.data && Array.isArray(response.data)) {
+          setFaqData(response.data);
+        }
       } catch (error) {
         console.error("Error fetching FAQs:", error);
       } finally {
@@ -20,7 +27,7 @@ const Faq = () => {
     };
 
     fetchFAQ();
-  }, []);
+  }, []); // Este useEffect solo se ejecuta una vez cuando el componente se monta
 
   if (loading) {
     return <p>Cargando preguntas frecuentes...</p>;
@@ -28,27 +35,27 @@ const Faq = () => {
 
   return (
     <Row>
-        <Col md={2} sm={0}></Col>
-        <Col md={8}>
-            <Container className="faq-section">
-            <h2>Preguntas Frecuentes</h2>
-            <Accordion defaultActiveKey="0" className="faq-list pb-5" flush>
-                {faqData.length > 0 ? (
-                faqData.map((faq, index) => (
-                    <Accordion.Item key={faq.id} eventKey={index.toString()}>
-                    <Accordion.Header>{faq.pregunta}</Accordion.Header>
-                    <Accordion.Body>
-                        <p>{faq.respuesta}</p>
-                    </Accordion.Body>
-                    </Accordion.Item>
-                ))
-                ) : (
-                <p>No hay preguntas frecuentes disponibles.</p>
-                )}
-            </Accordion>
-            </Container>
-        </Col>
-        <Col md={2} sm={0}></Col>
+      <Col md={2} sm={0}></Col>
+      <Col md={8}>
+        <Container className="faq-section">
+          <h2>Preguntas Frecuentes</h2>
+          <Accordion defaultActiveKey="0" className="faq-list pb-5" flush>
+            {faqData.length > 0 ? (
+              faqData.map((faq, index) => (
+                <Accordion.Item key={faq.id} eventKey={index.toString()}>
+                  <Accordion.Header><b>{faq.acf.pregunta}</b></Accordion.Header>
+                  <Accordion.Body>
+                    <p>{faq.acf.respuesta}</p>
+                  </Accordion.Body>
+                </Accordion.Item>
+              ))
+            ) : (
+              <p>No hay preguntas frecuentes disponibles.</p>
+            )}
+          </Accordion>
+        </Container>
+      </Col>
+      <Col md={2} sm={0}></Col>
     </Row>
   );
 };

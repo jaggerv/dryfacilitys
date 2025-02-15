@@ -10,9 +10,9 @@ const Projects = () => {
     const fetchProjects = async () => {
       try {
         const response = await axios.get(
-          "https://df-strapi-production.up.railway.app/api/proyectos?populate=*&sort=id:asc"
+          "https://panel.dryfacilitys.cl/wp/wp-json/wp/v2/proyectos"
         );
-        setProjects(response.data.data);
+        setProjects(response.data);
       } catch (error) {
         console.error("Error fetching projects:", error);
       }
@@ -28,11 +28,11 @@ const Projects = () => {
         <h5 className="text-center">Ejecutamos proyectos de alta calidad con resultados garantizados.</h5>
         <Row className="mt-4">
           {projects.map((project) => {
-            const beforeImage = project.imagen_antes
-              ? `http://localhost:1337${project.imagen_antes.url}`
+            const beforeImage = project.acf.imagen_antes
+              ? project.acf.imagen_antes.url
               : null;
-            const afterImage = project.imagen_despues
-              ? `http://localhost:1337${project.imagen_despues.url}`
+            const afterImage = project.acf.imagen_despues
+              ? project.acf.imagen_despues.url
               : null;
 
             return (
@@ -46,7 +46,7 @@ const Projects = () => {
                           className="d-block w-100 projectImg"
                           alt="Antes"
                         />
-                        <Carousel.Caption>
+                        <Carousel.Caption className="caption-text-shadow">
                           <p>Antes</p>
                         </Carousel.Caption>
                       </Carousel.Item>
@@ -58,15 +58,15 @@ const Projects = () => {
                           className="d-block w-100 projectImg"
                           alt="Después"
                         />
-                        <Carousel.Caption>
+                        <Carousel.Caption className="caption-text-shadow">
                           <p>Después</p>
                         </Carousel.Caption>
                       </Carousel.Item>
                     )}
                   </Carousel>
                   <Card.Body>
-                    <Card.Title>{project.titulo}</Card.Title>
-                    <Card.Text>{project.descripcion}</Card.Text>
+                    <Card.Title>{project.acf.titulo}</Card.Title>
+                    <Card.Text>{project.acf.descripcion}</Card.Text>
                   </Card.Body>
                 </Card>
               </Col>

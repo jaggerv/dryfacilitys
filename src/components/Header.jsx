@@ -114,13 +114,7 @@ export default function Header() {
 
           {/* Redes sociales */}
           <Nav className={isMobile ? "flex-column mt-3" : "d-flex justify-content-end"}>
-            <Nav.Link href="https://facebook.com" target="_blank" className="social-icon">
-              <i className="bi bi-facebook socialIcon"></i>
-            </Nav.Link>
-            <Nav.Link href="https://twitter.com" target="_blank" className="social-icon">
-              <i className="bi bi-twitter-x socialIcon"></i>
-            </Nav.Link>
-            <Nav.Link href="https://instagram.com" target="_blank" className="social-icon">
+            <Nav.Link href="https://instagram.com/dryfacilitys" target="_blank" className="social-icon">
               <i className="bi bi-instagram socialIcon"></i>
             </Nav.Link>
           </Nav>
