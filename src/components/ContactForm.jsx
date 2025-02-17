@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import emailjs from "emailjs-com"; // Importamos la librería de EmailJS
+import emailjs from "emailjs-com"; 
 
 export default function ContactForm() {
   const [name, setName] = useState("");
@@ -9,35 +9,41 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [responseMessage, setResponseMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const lastSubmissionTime = useRef(0); // Almacena la marca de tiempo del último envío
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
-    // Verifica que los datos no estén vacíos
+
+    const currentTime = Date.now();
+    if (currentTime - lastSubmissionTime.current < 30000) {
+      setResponseMessage("Por favor, espera 30 segundos antes de enviar otro mensaje.");
+      setIsSubmitting(false);
+      return;
+    }
+
     if (!name || !email || !message) {
       setResponseMessage("Todos los campos son obligatorios.");
       setIsSubmitting(false);
       return;
     }
-  
+
     const templateParams = {
       from_name: name,
       from_email: email,
       message: message,
     };
-  
-    console.log("Enviando estos datos a EmailJS:", templateParams); // Agregar consola para depuración
-  
+
     try {
-      const result = await emailjs.send(
-        "service_9119dhc", // ID del servicio
-        "template_wz75san", // ID de la plantilla
-        templateParams,    // Datos de la plantilla
-        "fdc0U8gd6IdoihgsR" // ID del usuario
+      await emailjs.send(
+        "service_o9kb6q8",
+        "template_hecojia",
+        templateParams,
+        "g4N9f8DTg7PTU7KKr"
       );
-  
+
       setResponseMessage("Correo enviado correctamente.");
+      lastSubmissionTime.current = Date.now(); // Actualiza la marca de tiempo del último envío
     } catch (error) {
       console.error("Error al enviar el correo:", error);
       setResponseMessage("Hubo un error al enviar el correo.");
