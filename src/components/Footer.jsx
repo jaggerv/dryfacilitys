@@ -11,13 +11,13 @@ export default function Footer() {
             {/* Usar el SVG importado */}
             <Image src={dryWhite2} className="logoFooter py-3" alt="Logo Dry Facilitys" />
             <ul className="list-unstyled text-md-start text-center">
-              <li className="my-3"><i className="bi bi-geo-alt text-warning"></i> Cobertura</li>
+              <li className="my-3"><i className="bi bi-geo-alt iconColorFooter"></i> Cobertura</li>
               <li>Puerto Varas</li> 
               <li>Santiago</li> 
               <li>Concepción</li> 
               <li>Valdivia</li> 
-              <li className="my-3"><i className="bi bi-telephone text-warning"></i> +56 9 8305 6957</li>
-              <li className="my-3"><i className="bi bi-envelope-at text-warning"></i> contacto@dryfacilitys.cl</li>
+              <li className="my-3"><i className="bi bi-telephone iconColorFooter"></i> +56 9 8305 6957</li>
+              <li className="my-3"><i className="bi bi-envelope-at iconColorFooter"></i> contacto@dryfacilitys.cl</li>
             </ul>
             <Container className="d-flex justify-content-start justify-content-center justify-content-md-start">
               <a href="https://instagram.com/dryfacilitys" target="_blank" className="text-white">

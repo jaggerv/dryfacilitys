@@ -3,7 +3,7 @@ import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { Link } from "react-scroll";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "../App.css";
-import icon from "../assets/dry_black2.svg";  // Importa el icono
+import icon from "../assets/dry_white2.svg";  // Importa el icono
 
 export default function Header() {
   const [isMobile, setIsMobile] = useState(false);
@@ -20,7 +20,7 @@ export default function Header() {
   }, []);
 
   return (
-    <Navbar bg="light" variant="light" expand="lg" fixed="top">
+    <Navbar bg="dark" variant="dark" expand="lg" fixed="top">
       <Container>
         <Navbar.Brand>
           <a href="#inicio">

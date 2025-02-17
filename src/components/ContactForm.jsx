@@ -56,13 +56,13 @@ export default function ContactForm() {
             <h4 className="text-start">Información de contacto</h4>
             <ul className="list-unstyled">
               <li className="my-3">
-                <i className="bi bi-telephone text-warning"></i> +56 9 8305 6957
+                <i className="bi bi-telephone iconColorContact"></i> +56 9 8305 6957
               </li>
               <li className="my-3">
-                <i className="bi bi-envelope-at text-warning"></i> contacto@dryfacilitys.cl
+                <i className="bi bi-envelope-at iconColorContact"></i> contacto@dryfacilitys.cl
               </li>
               <li className="my-3">
-                <i className="bi bi-geo-alt text-warning"></i> Puerto Varas, Región de Los Lagos
+                <i className="bi bi-geo-alt iconColorContact"></i> Puerto Varas, Región de Los Lagos
               </li>
             </ul>
           </Container>
@@ -103,7 +103,7 @@ export default function ContactForm() {
                   required
                 ></textarea>
               </div>
-              <Button variant="warning" type="submit" disabled={isSubmitting}>
+              <Button type="submit" className="dryButton" disabled={isSubmitting}>
                 {isSubmitting ? "Enviando..." : "Enviar"}
               </Button>
             </form>

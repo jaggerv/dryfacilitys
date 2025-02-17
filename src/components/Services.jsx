@@ -60,12 +60,12 @@ const Services = () => {
         <h4>¿Necesita asesoría o un presupuesto?</h4>
         <Container className="d-flex justify-content-center align-items-center pt-2 pb-5 content-center">
           <Button
-            variant="warning"
             size="lg"
             target="_blank"
             href="https://wa.me/56983056957"
+            className="dryButton"
           >
-            ¡Contáctenos hoy mismo!
+            <i className="bi bi-whatsapp"></i> ¡Contáctenos hoy mismo! 
           </Button>
         </Container>
       </Container>

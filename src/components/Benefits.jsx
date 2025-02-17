@@ -13,22 +13,22 @@ export default function Benefits() {
                 <Row className="my-5">
                     <Col md={4}>
                         <h5 className="text-center">Durabilidad de 10 años</h5>
-                        <Figure className="bg-warning benefit-circle my-5">
-                            <i className="bi bi-cloud-sleet-fill text-white fs-2"></i>
+                        <Figure className="benefit-circle my-5">
+                            <i className="bi bi-cloud-sleet-fill fs-2"></i>
                         </Figure>
                         <p className="text-center">Resistencia comprobada a condiciones climáticas extremas</p>
                     </Col>
                     <Col md={4}>
                         <h5 className="text-center">Aislamiento térmico y acústico</h5>
-                        <Figure className="bg-warning benefit-circle my-5">
-                                <i className="bi bi-volume-mute-fill text-white fs-2"></i>
+                        <Figure className="benefit-circle my-5">
+                                <i className="bi bi-volume-mute-fill fs-2"></i>
                         </Figure>
                         <p className="text-center">Reduce el calor y el ruido, mejorando el confort de sus espacios</p>
                     </Col>
                     <Col md={4}>
                         <h5 className="text-center">Fácil instalación</h5>
-                        <Figure className="bg-warning benefit-circle my-5">
-                        <i className="bi bi-emoji-smile-fill text-white fs-2"></i>
+                        <Figure className="benefit-circle my-5">
+                        <i className="bi bi-emoji-smile-fill fs-2"></i>
                         </Figure>
                         <p className="text-center">Sistema en frío, sin necesidad de máquinas o fuentes energéticas externas</p>
                     </Col>
@@ -37,15 +37,15 @@ export default function Benefits() {
                     <Col md={2}></Col>
                     <Col md={4}>
                             <h5 className="text-center">Resistencia a los rayos UV</h5>
-                            <Figure className="bg-warning benefit-circle my-5">
-                                <i className="bi bi-sun-fill text-white fs-2"></i>
+                            <Figure className="benefit-circle my-5">
+                                <i className="bi bi-sun-fill fs-2"></i>
                             </Figure>
                             <p className="text-center">Mantiene su color y propiedades incluso bajo exposición solar prolongada</p>    
                     </Col>
                     <Col md={4} sm={0}>
                             <h5 className="text-center">Excelente adherencia</h5>
-                            <Figure className="bg-warning benefit-circle my-5">
-                                <i className="bi bi-hand-thumbs-up-fill text-white fs-2"></i>
+                            <Figure className="benefit-circle my-5">
+                                <i className="bi bi-hand-thumbs-up-fill fs-2"></i>
                             </Figure>
                             <p className="text-center">Garantiza una cobertura uniforme y duradera</p>
                     </Col>

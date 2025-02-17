@@ -51,8 +51,8 @@ export default function Hero() {
           <p className="lead mb-5">
             Expertos en impermeabilización con membranas de alta tecnología. Servicios de revisión, reparación y mantenimiento.
           </p>
-          <Button variant="outline-warning" className="text-white" size="md" target="_blank" href="https://wa.me/56983056957">
-            ¡Solicite una inspección gratuita y proteja su inversión!
+          <Button variant="outline-light" className="outlineButton" size="lg" target="_blank" href="https://wa.me/56983056957">
+          <i className="bi bi-whatsapp"></i> ¡Solicite una inspección gratuita y proteja su inversión!
           </Button>
         </div>
       </Container>

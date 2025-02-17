@@ -61,7 +61,7 @@ h2 {
     transform: translateX(-50%); /* Ajusta la barra al centro */
     width: 50px; /* Ancho de la barra */
     height: 3px; /* Grosor de la barra */
-    background-color: #ffc107; /* Color verde */
+    background-color:#263169;
   }
 
 h3 {
@@ -79,7 +79,7 @@ h5 {
 }
 
 .navbar{
-    background-color: #ffffff !important;
+    background-color: #263169 !important;
 }
 
 .hero-section {
@@ -131,7 +131,7 @@ h5 {
     margin: auto;
   }
   
-  /* Barra verde en la parte superior */
+  /* Barra en la parte superior */
   .hero-content::before {
     content: "";
     position: absolute;
@@ -139,10 +139,20 @@ h5 {
     left: 0;
     width: 100%;
     height: 6px;
-    background-color: #ffc107; /* Color verde success de Bootstrap */
+    background-color: #83cee3; /* Color verde success de Bootstrap */
     border-radius: 8px 8px 0 0; /* Opcional: redondear la parte superior */
   }
   
+  .outlineButton{
+    border-color: #83cee3;
+  }
+  
+  .outlineButton:hover{
+    border-color: #83cee3;
+    background-color: #83cee3;
+    color: white;
+  }
+
   /* Asegurando que el contenido esté en el cuadro */
   .hero-content h1,
   .hero-content p {
@@ -156,24 +166,26 @@ h5 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #28a745;  /* Color success */
+    background-color: #263169;  /* Color success */
     border-radius: 50%;  /* Hacemos el círculo */
     margin: 0 auto;
+    color: white;
   }
 
 /* Aseguramos que los enlaces del navbar tengan un color de texto por defecto */
 .navbar-nav .nav-link {
-    color: #000; /* Color de texto por defecto */
+    color: white; /* Color de texto por defecto */
   }
   
   /* Estilo cuando el mouse pasa sobre el enlace */
   .navbar-nav .nav-link:hover {
-    color: #ffc107 !important; /* Color verde cuando se pasa el mouse */
+
+    color: #83cee3  !important; /* Color verde cuando se pasa el mouse */
   }
   
   /* Aseguramos que el enlace activo tenga el color verde también */
   .navbar-nav .nav-link.active {
-    color:#ffc107 !important;
+    color:#83cee3  !important;
   }
 
 .serviceImg{
@@ -204,14 +216,14 @@ h5 {
   }
 
   /* Sobrescribir el color de fondo cuando el item está activo (seleccionado) */
-.nav-dropdown .dropdown-item.active {
-    background-color: #ffc107 !important; /* Verde de Bootstrap - success */
+  .nav-dropdown .dropdown-item.active {
+    background-color:#83cee3 !important; /* Verde de Bootstrap - success */ 
     color: white !important; /* Asegura que el texto sea blanco cuando esté activo */
   }
   
   /* Cambiar el color de fondo al pasar el mouse (hover) */
   .nav-dropdown .dropdown-item:hover {
-    background-color: #ffc107 !important; /* Verde de Bootstrap - success */
+    background-color: #bae2ec !important; /* Verde de Bootstrap - success */
     color: white !important; /* Texto blanco en el hover */
   }
   
@@ -232,7 +244,7 @@ h5 {
   .dropdown-Navbr {
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: white;
   }
 
   .custom-image{
@@ -292,3 +304,24 @@ h5 {
     font-size: 1.1rem;
   }
   
+  .dropdown-menu.show{
+    background-color: #83cee3;
+  }
+
+  .dryButton {
+    background-color: #263169;
+    border-color: #263169;
+  }
+
+  .dryButton:hover, .dryButton:active{
+    background-color: #83cee3;
+    border-color: #83cee3;
+  }
+
+  .iconColorContact{
+    color: #263169;
+  }
+  
+  .iconColorFooter{
+    color: white;
+  }

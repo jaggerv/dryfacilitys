@@ -67,7 +67,7 @@ export default function AboutUs() {
                 </li>
               </ul>
             </Container>
-            <Button variant="warning" onClick={toggleModal} className="m-3">
+            <Button onClick={toggleModal} className="m-3 dryButton">
               Ver Videos
             </Button>
           </Col>
