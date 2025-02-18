@@ -49,7 +49,7 @@ export default function Hero() {
         <div className="hero-content">
           <h1 className="display-5">Protección y durabilidad para sus techumbres y estructuras</h1>
           <p className="lead mb-5">
-            Expertos en impermeabilización con membranas de alta tecnología. Servicios de revisión, reparación y mantenimiento.
+            Expertos en impermeabilización con membranas de alta tecnología. Servicios de revisión, reparación y mantenimiento para hogares, bodegas, edificios, domos geodésicos, motorhomes, camiones y más.
           </p>
           <Button variant="outline-light" className="outlineButton" size="lg" target="_blank" href="https://wa.me/56983056957">
           <i className="bi bi-whatsapp"></i> ¡Solicite una inspección gratuita y proteja su inversión!
