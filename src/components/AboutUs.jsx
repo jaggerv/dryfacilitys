@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Col, Row, Container, Image, Button, Modal, Carousel } from "react-bootstrap";
 import axios from "axios";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../app.css"; // Asegúrate de importar el archivo CSS
+import "../app.css";
 
 export default function AboutUs() {
   const [showModal, setShowModal] = useState(false);
@@ -17,9 +17,14 @@ export default function AboutUs() {
           "https://panel.dryfacilitys.cl/wp/wp-json/wp/v2/sobre_nosotros"
         );
 
-        // Extraer datos desde ACF
         if (response.data.length > 0) {
           const acfData = response.data[0].acf;
+
+          const extractVideoId = (url) => {
+            const match = url.match(/[?&]v=([^&]+)/);
+            return match ? `https://www.youtube.com/embed/${match[1]}` : "";
+          };
+
           setAboutData({
             titulo: acfData?.titulo || "Título no disponible",
             texto: acfData?.texto || "Descripción no disponible.",
@@ -27,9 +32,9 @@ export default function AboutUs() {
             punto2: acfData?.punto2 || "Punto 2 no disponible",
             punto3: acfData?.punto3 || "Punto 3 no disponible",
             imagen: acfData?.imagen?.url || "https://via.placeholder.com/500",
-            video1: acfData?.video1 || "",
-            video2: acfData?.video2 || "",
-            video3: acfData?.video3 || "",
+            video1: extractVideoId(acfData?.video1 || ""),
+            video2: extractVideoId(acfData?.video2 || ""),
+            video3: extractVideoId(acfData?.video3 || ""),
           });
         }
       } catch (error) {
