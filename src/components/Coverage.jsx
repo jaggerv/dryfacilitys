@@ -8,13 +8,12 @@ export default function Coverage() {
         <Row>
             <Col md={5}>
             <Container className="">
-                <h5>Operamos en las siguientes regiones, brindando soluciones de impermeabilización de alta calidad</h5>
+                <h5>Operamos en las siguientes regiones, brindando soluciones de impermeabilización de alta calidad:</h5>
                 <ul>
                     <li>Región de Los Lagos</li>
                     <li>Región de Los Ríos</li>
-                    <li>Concepción</li>
-                    <li>Viña del Mar</li>
-                    <li>Santiago</li>
+                    <li>Santiago y sus alrededores</li>
+                    <li>Despachos a todo Chile</li>
                 </ul>
             </Container>
             </Col>
@@ -30,8 +29,8 @@ export default function Coverage() {
                 >    
                 </iframe>
             </Container>
-                <h5>Sede central: Puerto Varas</h5>
-            
+                <h5>Sede central: Puerto Varas - Santiago</h5>
+                <h6>Contacto: +56 9 8305 6957 | contacto@dryfacilitys.cl</h6>
             </Col>
             
         </Row>

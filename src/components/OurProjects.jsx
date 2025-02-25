@@ -25,7 +25,7 @@ const Projects = () => {
     <div className="bg-light pt-5">
       <Container className="my-5">
         <h2 className="my-5 text-center">Nuestros Proyectos</h2>
-        <h5 className="text-center">Ejecutamos proyectos de alta calidad con resultados garantizados.</h5>
+        <h5 className="text-center">Antes y después</h5>
         <Row className="mt-4">
           {projects.map((project) => {
             const beforeImage = project.acf.imagen_antes

@@ -52,7 +52,7 @@ export default function Hero() {
             Expertos en impermeabilización con membranas de alta tecnología. Servicios de revisión, reparación y mantenimiento para hogares, bodegas, edificios, domos geodésicos, motorhomes, camiones y más.
           </p>
           <Button variant="outline-light" className="outlineButton" size="lg" target="_blank" href="https://wa.me/56983056957">
-          <i className="bi bi-whatsapp"></i> ¡Solicite una inspección gratuita y proteja su inversión!
+          <i className="bi bi-whatsapp"></i> ¡Solicite una visita técnica y proteja su inversión!
           </Button>
         </div>
       </Container>

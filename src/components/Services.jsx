@@ -26,7 +26,7 @@ const Services = () => {
       <Container className="my-5">
         <Container className="my-5">
           <h2 className="my-5">Nuestros Servicios</h2>
-          <h3>Servicios especializados en impermeabilización y reparación</h3>
+          <h3>Servicios especializados en impermeabilización y reparación de techumbres</h3>
           <h5>
             Ofrecemos una amplia gama de servicios diseñados para proteger y
             prolongar la vida útil de sus estructuras:
